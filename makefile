@@ -1,6 +1,6 @@
-CC := g++-11
+CC := g++
 #CXXFLAGS := -std=c++17 -march=native -g -fopenmp
-CXXFLAGS := -std=c++17 -march=native  -O3 -fopenmp
+CXXFLAGS :=  -std=c++17 -march=native  -O3 -fopenmp
 EXECUTABLES := main
 
 SRC_DIR := src

@@ -168,10 +168,10 @@ void Test::DoTestingOnThisGraph(Graph &currGraph, std::string &logFile)
     // bfs_s(currGraph,0);
     // std::cout << "Running Parallel" << std::endl;
     // bfs(currGraph,0);
-    for(int i = 0; i < 100; ++i)
+    //for(int i = 0; i < 100; ++i)
     {
 //        std::cout << "New Call" << " Root: " << i << std::endl;
-        TestBFS(currGraph,i);
+        TestBFS(currGraph,1);
 //        std::cout << "   " << std::endl;        
     }
 
@@ -209,7 +209,7 @@ bool Test::CompareLayers(long* layers, long* layers_s)
         }
            
     }
-    std::cout<<"Layers Match!"<<std::endl;
+    //std::cout<<"Layers Match!"<<std::endl;
     return true;
 }
 
@@ -231,6 +231,7 @@ auto startP = std::chrono::high_resolution_clock::now();
 auto end = std::chrono::high_resolution_clock::now();
 auto seqT = std::chrono::duration<double>(startP - startS);
 auto parallelT = std::chrono::duration<double>(end - startP);
+
 
     std::cout << "Seq Time: " << seqT.count() << " Parallel Time: " << parallelT.count() << std::endl;
     CompareLayers(layers, layers_s);

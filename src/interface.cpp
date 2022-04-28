@@ -1,6 +1,6 @@
 #include "../headers/allHeaders.h"
 #include <algorithm>
-
+#define N_THREADS 128
 
 std::set<long> Interface::convertToSet(std::vector<long> &v)
 {
@@ -43,7 +43,7 @@ VertexSubset Interface::EdgeMapSparse(const Graph &graph,
 {
     VertexSubset Out; 
     //TO DO: parallel
-        #pragma omp parallel num_threads(2)
+        #pragma omp parallel num_threads(N_THREADS)
         {
             
                 #pragma omp for nowait
